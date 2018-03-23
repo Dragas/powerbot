@@ -1,6 +1,7 @@
 package lt.saltyjuice.dragas.powerbot.actions.walking.lumbridge;
 
 import lt.saltyjuice.dragas.powerbot.actions.walking.WalkingAction;
+import org.powerbot.script.rt4.ClientContext;
 
 public class GotoBankAction extends WalkingAction
 {
@@ -31,5 +32,11 @@ public class GotoBankAction extends WalkingAction
     protected int getOriginalY()
     {
         return originalY;
+    }
+
+    @Override
+    public boolean isFinished(ClientContext ctx)
+    {
+        return ctx.objects.select(6).id(18491).poll().valid();
     }
 }

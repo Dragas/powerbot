@@ -2,6 +2,7 @@ package lt.saltyjuice.dragas.powerbot;
 
 import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.ClientContext;
+import org.powerbot.script.rt4.GameObject;
 
 public class Utility
 {
@@ -56,5 +57,10 @@ public class Utility
 
     public static boolean inventoryContains(ClientContext ctx, int itemId) {
         return ctx.inventory.select().id(itemId).count() != 0;
+    }
+
+    public static void turnTo(GameObject obj)
+    {
+        obj.ctx.camera.turnTo(obj);
     }
 }

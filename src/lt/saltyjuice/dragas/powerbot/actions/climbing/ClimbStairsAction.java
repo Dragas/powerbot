@@ -17,6 +17,7 @@ public abstract class ClimbStairsAction extends InteractingAction
     @Override
     protected void interact(GameObject obj)
     {
+        Utility.turnTo(obj);
         climb(obj);
     }
 
@@ -42,7 +43,7 @@ public abstract class ClimbStairsAction extends InteractingAction
     @Override
     protected int getSearchRadius()
     {
-        return 3;
+        return 4;
     }
 
     /**

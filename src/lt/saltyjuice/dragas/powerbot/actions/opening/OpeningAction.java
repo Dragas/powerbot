@@ -18,7 +18,7 @@ public abstract class OpeningAction extends InteractingAction
     @Override
     protected int getSearchRadius()
     {
-        return 3;
+        return 11;
     }
 
     @Override

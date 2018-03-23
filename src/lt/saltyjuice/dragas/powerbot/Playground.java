@@ -4,6 +4,7 @@ package lt.saltyjuice.dragas.powerbot;
 import lt.saltyjuice.dragas.powerbot.actions.Action;
 import lt.saltyjuice.dragas.powerbot.actions.banking.BankClosingAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.BankOpeningAction;
+import lt.saltyjuice.dragas.powerbot.actions.camera.CameraTurningAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.depositing.BowStringDepositingAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.withdrawing.FlaxWithdrawingAction;
 import lt.saltyjuice.dragas.powerbot.actions.climbing.lumbridge.ClimbDownAtSouthAction;
@@ -12,15 +13,9 @@ import lt.saltyjuice.dragas.powerbot.actions.interacting.SpinnerInteractingActio
 import lt.saltyjuice.dragas.powerbot.actions.opening.LumbridgeSpinnerRoomDoorOpeningAction;
 import lt.saltyjuice.dragas.powerbot.actions.walking.lumbridge.GotoBankAction;
 import lt.saltyjuice.dragas.powerbot.actions.walking.lumbridge.GotoSouthStairsAction;
-import lt.saltyjuice.dragas.powerbot.actions.walking.lumbridge.GotoSpinnerRoomAction;
 import lt.saltyjuice.dragas.powerbot.actions.widgeting.FlaxSpinningAction;
 import org.powerbot.script.Condition;
-import org.powerbot.script.PollingScript;
 import org.powerbot.script.Script;
-import org.powerbot.script.rt4.ClientContext;
-import org.powerbot.script.rt4.Component;
-import org.powerbot.script.rt4.GameObject;
-import org.powerbot.script.rt4.Widget;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -41,8 +36,7 @@ public class Playground extends AbstractPollingScript
         log.fine("Got action" + action.toString());
         if(action.isFinished(ctx))
         {
-            queue.removeFirst();
-            queue.addLast(action);
+            nextAction();
         }
         else if(action.isUsable(ctx))
         {
@@ -51,9 +45,8 @@ public class Playground extends AbstractPollingScript
         }
         else
         {
-            Action lastAction = queue.removeLast();
             action.undo(ctx);
-            queue.addFirst(lastAction);
+            previousAction();
         }
         /*
         Widget a = ctx.widgets.select().id(Constant.Widget.CHOICES).poll();
@@ -61,6 +54,18 @@ public class Playground extends AbstractPollingScript
         Component b = a.component(Constant.Widget.CHOICE.THIRD);
         b.interact("Spin");
         Condition.wait(() -> ctx.inventory.select(it -> it.id() == Constant.Item.FLAX).count() == 0, 1000, 10);*/
+    }
+
+    private void nextAction()
+    {
+        Action a = queue.removeFirst();
+        queue.addLast(a);
+    }
+
+    private void previousAction()
+    {
+        Action lastAction = queue.removeLast();
+        queue.addFirst(lastAction);
     }
 
     @Override
@@ -74,10 +79,12 @@ public class Playground extends AbstractPollingScript
         queue.addLast(new BankClosingAction());
         queue.addLast(new GotoSouthStairsAction());
         queue.addLast(new ClimbDownAtSouthAction());
-        queue.addLast(new GotoSpinnerRoomAction());
+        //queue.addLast(new GotoSpinnerRoomAction());
+        queue.addLast(new CameraTurningAction());
         queue.addLast(new LumbridgeSpinnerRoomDoorOpeningAction());
         queue.addLast(new SpinnerInteractingAction());
         queue.addLast(new FlaxSpinningAction());
+        queue.addLast(new LumbridgeSpinnerRoomDoorOpeningAction());
         queue.addLast(new GotoSouthStairsAction());
         queue.addLast(new ClimbUpAtSouthAction());
         queue.addLast(new GotoBankAction());

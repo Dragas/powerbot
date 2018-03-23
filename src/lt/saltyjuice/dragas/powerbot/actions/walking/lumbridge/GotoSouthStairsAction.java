@@ -1,5 +1,6 @@
 package lt.saltyjuice.dragas.powerbot.actions.walking.lumbridge;
 
+import lt.saltyjuice.dragas.powerbot.Constant;
 import lt.saltyjuice.dragas.powerbot.Utility;
 import lt.saltyjuice.dragas.powerbot.actions.walking.WalkingAction;
 import org.powerbot.script.Tile;
@@ -34,5 +35,11 @@ public class GotoSouthStairsAction extends WalkingAction
     protected int getOriginalY()
     {
         return originalY;
+    }
+
+    @Override
+    public boolean isFinished(ClientContext ctx)
+    {
+        return ctx.objects.select(3).id(Constant.Objects.Stairs.LUMBRIDGE_THIRD_FLOOR_SOUTH, Constant.Objects.Stairs.LUMBRIDGE_SECOND_FLOOR_SOUTH).poll().valid();
     }
 }

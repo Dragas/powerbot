@@ -6,8 +6,7 @@ import java.util.logging.Level;
 
 import lt.saltyjuice.dragas.powerbot.actions.Action;
 import lt.saltyjuice.dragas.powerbot.actions.banking.BankClosingAction;
-import lt.saltyjuice.dragas.powerbot.actions.banking.BankOpeningAction;
-import lt.saltyjuice.dragas.powerbot.actions.banking.CameraTurningAction;
+import lt.saltyjuice.dragas.powerbot.actions.camera.CameraTurningAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.depositing.DepositAllAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.withdrawing.LobsterWithdrawingAction;
 import lt.saltyjuice.dragas.powerbot.actions.interacting.HosidiusBankInteractingAction;
