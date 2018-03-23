@@ -20,7 +20,7 @@ public abstract class InteractingAction implements Action
     @Override
     public boolean isUsable(ClientContext ctx)
     {
-        return getObject(ctx).inViewport();
+        return getObject(ctx).valid();
     }
 
     @Override

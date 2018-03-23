@@ -19,12 +19,25 @@ public class Constant
         {
             public static final int LUMBERIDGE_SPINNER_ROOM_DOOR = 1544;
         }
+
+        public static class Bank
+        {
+            public static final int HOSIDIUS_COOKER_BANK = 21301;
+        }
+
+        public static class Stove
+        {
+            public static final int HOSIDIUS_CLAY_COOKER = 21302;
+        }
     }
 
     public static class Item
     {
         public static final int FLAX = 1779;
         public static final int BOW_STRING = 1777;
+        public static final int RAW_LOBSTER = 377;
+        public static final int COOKED_LOBSTER = 379;
+        public static final int BURNT_LOBSTER = 381;
     }
 
     /**

@@ -23,6 +23,16 @@ public class Utility
         return isAtFloor(ctx, floor) && isAtLocation(ctx, x, y);
     }
 
+    public static boolean hasLeveledUp(ClientContext ctx)
+    {
+        return ctx.widgets.select().id(Constant.Widget.LEVEL_UP).poll().valid();
+    }
+
+    public static boolean areChoicesVisible(ClientContext ctx)
+    {
+        return ctx.widgets.select().id(Constant.Widget.CHOICES).poll().valid();
+    }
+
     /**
      * Checks whether or not the character is currently moving.
      * @param ctx
@@ -41,5 +51,10 @@ public class Utility
     private static Tile getCurrentTile(ClientContext ctx)
     {
         return ctx.players.local().tile();
+    }
+
+
+    public static boolean inventoryContains(ClientContext ctx, int itemId) {
+        return ctx.inventory.select().id(itemId).count() != 0;
     }
 }
