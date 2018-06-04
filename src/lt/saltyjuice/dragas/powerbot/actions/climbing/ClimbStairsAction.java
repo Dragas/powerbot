@@ -1,12 +1,11 @@
 package lt.saltyjuice.dragas.powerbot.actions.climbing;
 
 import lt.saltyjuice.dragas.powerbot.Utility;
-import lt.saltyjuice.dragas.powerbot.actions.Action;
-import lt.saltyjuice.dragas.powerbot.actions.interacting.InteractingAction;
+import lt.saltyjuice.dragas.powerbot.actions.interacting.ObjectInteractingAction;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
 
-public abstract class ClimbStairsAction extends InteractingAction
+public abstract class ClimbStairsAction extends ObjectInteractingAction
 {
     @Override
     public boolean isUsable(ClientContext ctx)

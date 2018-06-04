@@ -1,7 +1,6 @@
 package lt.saltyjuice.dragas.powerbot.actions.widgeting;
 
 import lt.saltyjuice.dragas.powerbot.actions.Action;
-import lt.saltyjuice.dragas.powerbot.actions.interacting.InteractingAction;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Component;
 import org.powerbot.script.rt4.Widget;

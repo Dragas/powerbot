@@ -13,6 +13,6 @@ public class FlaxWithdrawingAction extends WithdrawingAction
     @Override
     protected int getItemCount()
     {
-        return 28;
+        return 0;
     }
 }

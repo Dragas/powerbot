@@ -15,7 +15,6 @@ public class DepositAllAction extends DepositingAction {
 
 	@Override
 	protected void deposit(ClientContext ctx) {
-		ctx.inventory.select();
 		ctx.bank.depositInventory();
 	}
 

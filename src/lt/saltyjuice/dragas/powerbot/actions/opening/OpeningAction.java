@@ -1,24 +1,23 @@
 package lt.saltyjuice.dragas.powerbot.actions.opening;
 
-import lt.saltyjuice.dragas.powerbot.Constant;
-import lt.saltyjuice.dragas.powerbot.actions.interacting.InteractingAction;
+import lt.saltyjuice.dragas.powerbot.actions.interacting.ObjectInteractingAction;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
 
 import java.util.Arrays;
 
-public abstract class OpeningAction extends InteractingAction
+public abstract class OpeningAction extends ObjectInteractingAction
 {
     @Override
     protected int getObjectID()
     {
-        return getDoorId();
+        return getClosedDoorId();
     }
 
     @Override
     protected int getSearchRadius()
     {
-        return 11;
+        return 6;
     }
 
     @Override
@@ -30,13 +29,15 @@ public abstract class OpeningAction extends InteractingAction
     @Override
     protected void interact(GameObject obj)
     {
+        obj.ctx.camera.turnTo(obj);
+        //obj.click();
         obj.interact("Open");
     }
 
     @Override
     public boolean isFinished(ClientContext ctx)
     {
-        return Arrays.asList(getObject(ctx).actions()).contains("Close");
+        return ctx.objects.select(getSearchRadius()).id(getOpenDoorId()).poll().valid();
     }
 
     @Override
@@ -45,5 +46,7 @@ public abstract class OpeningAction extends InteractingAction
 
     }
 
-    protected abstract int getDoorId();
+    protected abstract int getClosedDoorId();
+
+    protected abstract int getOpenDoorId();
 }
