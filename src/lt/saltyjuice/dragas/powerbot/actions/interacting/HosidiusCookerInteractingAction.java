@@ -6,7 +6,11 @@ import org.powerbot.script.Condition;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
 
-public class HosidiusCookerInteractingAction extends InteractingAction {
+import java.util.Optional;
+
+public class HosidiusCookerInteractingAction extends ObjectInteractingAction
+{
+
 	@Override
 	protected int getObjectID() {
 		return Constant.Objects.Stove.HOSIDIUS_CLAY_COOKER;

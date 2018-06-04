@@ -1,38 +1,19 @@
 package lt.saltyjuice.dragas.powerbot.actions.interacting;
 
 import lt.saltyjuice.dragas.powerbot.actions.Action;
+import org.powerbot.script.Actionable;
 import org.powerbot.script.rt4.ClientContext;
-import org.powerbot.script.rt4.GameObject;
 
-public abstract class InteractingAction implements Action
+public abstract class InteractingAction<T extends Actionable> implements Action
 {
-    protected abstract int getObjectID();
-
-    protected abstract int getSearchRadius();
-
-    protected abstract void interact(GameObject obj);
-
-    protected GameObject getObject(ClientContext ctx)
-    {
-        return ctx.objects.select(getSearchRadius()).id(getObjectID()).poll();
-    }
-
-    @Override
-    public boolean isUsable(ClientContext ctx)
-    {
-        return getObject(ctx).valid();
-    }
-
     @Override
     public void execute(ClientContext ctx)
     {
-        GameObject obj = getObject(ctx);
+        T obj = getObject(ctx);
         interact(obj);
     }
 
-    @Override
-    public void undo(ClientContext ctx)
-    {
+    protected abstract T getObject(ClientContext ctx);
 
-    }
+    protected abstract void interact(T obj);
 }

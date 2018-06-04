@@ -6,7 +6,8 @@ import org.powerbot.script.Condition;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
 
-public class HosidiusBankInteractingAction extends InteractingAction {
+public class HosidiusBankInteractingAction extends ObjectInteractingAction
+{
 
 	@Override
 	public boolean isUsable(ClientContext ctx) {
