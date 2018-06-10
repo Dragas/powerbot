@@ -2,6 +2,7 @@ package lt.saltyjuice.dragas.powerbot.actions.interacting;
 
 import lt.saltyjuice.dragas.powerbot.actions.SpellcastingAction;
 
+import org.powerbot.script.Condition;
 import org.powerbot.script.Tile;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.Magic;
@@ -14,6 +15,13 @@ public class TeleportingAction extends SpellcastingAction
     {
         super(spell);
         this.destination = destination;
+    }
+
+    @Override
+    public void execute(ClientContext ctx)
+    {
+        super.execute(ctx);
+        Condition.wait(() -> this.isFinished(ctx));
     }
 
     @Override

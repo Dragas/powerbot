@@ -1,5 +1,6 @@
 package lt.saltyjuice.dragas.powerbot.actions.interacting;
 
+import org.powerbot.script.Condition;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
 
@@ -29,6 +30,7 @@ public class ParticularObjectInteractingAction extends ObjectInteractingAction
     protected void interact(GameObject obj)
     {
         obj.interact(action);
+        Condition.wait(() -> this.isFinished(obj.ctx));
     }
 
     @Override
