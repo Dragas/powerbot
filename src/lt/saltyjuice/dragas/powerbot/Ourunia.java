@@ -27,7 +27,8 @@ import java.util.logging.Level;
 
 @Script.Manifest(
         name="Ourunia",
-        description = "Runs ourania altar for that sweet runecrafting XP")
+        description = "Runs ourania altar for that sweet runecrafting XP. Read the thread for requirements!",
+        properties = "author=Vaflis; client=4; topic=1345732")
 public class Ourunia extends AbstractPollingScript
 {
     private Deque<Action> queue;
