@@ -1,8 +1,10 @@
 package lt.saltyjuice.dragas.powerbot;
 
 import org.powerbot.script.Tile;
+import org.powerbot.script.Validatable;
 import org.powerbot.script.rt4.ClientContext;
 import org.powerbot.script.rt4.GameObject;
+import org.powerbot.script.rt4.Widget;
 
 public class Utility
 {
@@ -62,5 +64,10 @@ public class Utility
     public static void turnTo(GameObject obj)
     {
         obj.ctx.camera.turnTo(obj);
+    }
+
+    public static Widget getLevelUpWidget(ClientContext ctx)
+    {
+        return ctx.widgets.select().id(Constant.Widget.LEVEL_UP).poll();
     }
 }

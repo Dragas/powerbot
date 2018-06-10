@@ -4,10 +4,20 @@ public class Constant
 {
     public static class Objects
     {
+        public static final int ECTOFUNTUS = 16648;
+        public static final int WITHERED_WALL_DOWN = 16526;
+
+        public static class Tree {
+            public static final int MAPLE_FARMING = 8444;
+            public static final int MAPLE = 1759;
+            public static final int YEW = 1753;
+        }
+
         public static class Stairs
         {
             public static final int LUMBRIDGE_SECOND_FLOOR_SOUTH = 16672;
             public static final int LUMBRIDGE_THIRD_FLOOR_SOUTH = 16673;
+            public static final int ECTOFUNTUS_SLIME_STAIRS_DOWN = 16109;
         }
 
         public static class Spinner
@@ -17,7 +27,8 @@ public class Constant
 
         public static class Door
         {
-            public static final int LUMBERIDGE_SPINNER_ROOM_DOOR = 1544;
+            public static final int LUMBERIDGE_SPINNER_ROOM_DOOR_CLOSED = 1543;
+            public static final int LUMBERIDGE_SPINNER_ROOM_DOOR_OPEN = 1544;
         }
 
         public static class Bank
@@ -29,6 +40,12 @@ public class Constant
         {
             public static final int HOSIDIUS_CLAY_COOKER = 21302;
         }
+
+        public static class Trapdoor
+        {
+            public static final int ECTOFUNTUS_SLIME_TRAPDOOR_CLOSED = 16113;
+            public static final int ECTOFUNTUS_SLIME_TRAPDOOR_OPEN = 16114;
+        }
     }
 
     public static class Item
@@ -38,6 +55,23 @@ public class Constant
         public static final int RAW_LOBSTER = 377;
         public static final int COOKED_LOBSTER = 379;
         public static final int BURNT_LOBSTER = 381;
+        public static final int COMPOST = 6032;
+        public static final int SALTPETRE = 13421;
+        public static final int ECTOPHIAL = 4251;
+        public static final int POT = 1931;
+        public static final int BUCKET = 1925;
+        public static final int ECTO_TOKEN = 4278;
+        public static final int BIG_BONES = 532;
+        public static final int MAPLE_LOGS = 1517;
+        public static final int YEW_LOGS = 1515;
+        public static final int HARRALANDER = 255;
+        public static final int VIAL_OF_WATER = 227;
+        public static final int RED_SPIDER_EGG = 223;
+        public static final int HARRALANDER_UNFINISHED_POSTION = 97;
+        public static final int LAW_RUNE = 563;
+        public static final int EARTH_RUNE = 557;
+        public static final int ASTRAL_RUNE = 9075;
+        public static final int PURE_ESSENCE = 7936;
     }
 
     /**
