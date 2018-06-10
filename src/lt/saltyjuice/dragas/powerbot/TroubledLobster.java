@@ -15,10 +15,10 @@ import lt.saltyjuice.dragas.powerbot.actions.widgeting.LobsterCookingAction;
 import org.powerbot.script.Condition;
 import org.powerbot.script.Script;
 
-@Script.Manifest(
+/*@Script.Manifest(
 		name = "Troubled lobsters",
 		description = "Cooks lobsters in hosidius house kitchen for that sweet sweet xp"
-)
+)*/
 public class TroubledLobster extends AbstractPollingScript {
 
 	private Deque<Action> queue = null;

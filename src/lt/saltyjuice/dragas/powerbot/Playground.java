@@ -4,6 +4,7 @@ package lt.saltyjuice.dragas.powerbot;
 import lt.saltyjuice.dragas.powerbot.actions.Action;
 import lt.saltyjuice.dragas.powerbot.actions.banking.BankClosingAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.BankOpeningAction;
+import lt.saltyjuice.dragas.powerbot.actions.banking.depositing.DepositAllAction;
 import lt.saltyjuice.dragas.powerbot.actions.camera.CameraTurningAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.depositing.BowStringDepositingAction;
 import lt.saltyjuice.dragas.powerbot.actions.banking.withdrawing.FlaxWithdrawingAction;
@@ -21,10 +22,10 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.logging.Level;
 
-@Script.Manifest(
+/*@Script.Manifest(
         name = "Playground",
         description = "It's going to do things"
-)
+)*/
 public class Playground extends AbstractPollingScript
 {
     Deque<Action> queue;
@@ -74,7 +75,7 @@ public class Playground extends AbstractPollingScript
         //factory = new ActionFactory();
         queue = new LinkedList<>();
         queue.addLast(new BankOpeningAction());
-        queue.addLast(new BowStringDepositingAction());
+        queue.addLast(new DepositAllAction());
         queue.addLast(new FlaxWithdrawingAction());
         queue.addLast(new BankClosingAction());
         queue.addLast(new GotoSouthStairsAction());
